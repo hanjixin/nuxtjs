@@ -97,12 +97,19 @@
 
 
 <script>
+// import axios from 'axios'
 export default {
   data() {
     return {
       slide: 0,
       sliding: null
     };
+  },
+  created() {
+    console.log(this.$axios)
+    this.$axios.get('/').then(res => {
+      console.log(res.data)
+    })
   },
   methods: {
     onSlideStart(slide) {
